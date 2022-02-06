@@ -15,6 +15,10 @@ let app = Vue.createApp({
   },
   methods: {
     switchTab (status) {
+      if (!this.currSetup) {
+        this.currSetup = true
+        this.rotActive = !this.rotActive
+      }
       this.tabAny = status
       this.tennantImage = status
       this.sendQuery()
