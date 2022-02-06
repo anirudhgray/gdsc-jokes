@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    color: white;
+    height: 100vh;
+    font-family: sans-serif;
+}
+h1, p {
+    margin: 0;
+}
+#app {
+    height: 100%;
+}
+
+header {
+    background-color: #101928;
+}
+nav {
+    display: flex;
+    gap: 1.5rem;
+}
+.main {
+    background-color: #202937;
+}
+button {
+    background: none;
+    border: 0 solid transparent;
+    color: #42d69d;
+    font-size: 1.25rem;
+}
+.button-selected {
+    color: white;
+    border-bottom: 2px white solid;
+}
+
+.point-cursor:hover {
+    cursor: pointer;
+}
+
+.box {
+    background-color: #42d69d;
+    color: #202937;
+    border-radius: 10px;
+    width: 400px;
+}
+.joke {
+    font-weight: 700;
+}
+
+.green-text {
+    color: #42d69d;
+}
+
+.pad {
+    padding: 2rem;
+}
+
+.flex {
+    display: flex;
+}
+.flex-column {
+    flex-direction: column;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.justify-evenly {
+    justify-content: space-evenly;
+}
+.align-center {
+    align-items: center;
+}
+.wrap {
+    flex-wrap: wrap-reverse;
+}
+.grow {
+    flex-grow: 1;
+}
+.gap {
+    gap: 1rem;
+}
+
+.nav-img {
+    position: relative;
+    height: 2.25rem;
+}
+.nav-img-main, .nav-img-hover {
+    height: 2.25rem;
+}
+.nav-img img.nav-img-hover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity .2s;
+}
+.nav-img:hover img.nav-img-hover {
+    opacity: 1;
+}
+
+.main-img {
+    height: 15rem;
+    position: relative
+}
+.main-img-main, .main-img-click {
+    height: 15rem;
+}
+.main-img img.main-img-click {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    object-fit: contain;
+    opacity: 0;
+    transition: transform .5s ease-in-out, opacity .4s;
+    transform: rotate(0deg);
+}
+.main-img img.main-img-main {
+    transition: transform .5s ease-in-out, opacity .4s;
+    transform: rotate(0deg);
+}
+.main-img.clicked img.main-img-click {
+    transform: rotate(360deg);
+    opacity: 1;
+}
+.main-img.clicked img.main-img-main {
+    transform: rotate(360deg);
+    opacity: 0;
+}
+
+
+.text-center {
+    text-align: center;
+    margin-top: 1rem;
+}
+.mt {
+    margin-top: 1rem;
+}
+
+@media (max-width:768px) {
+    nav {
+        justify-content: center;
+    }
+    .main.pad {
+        padding: 1rem;
+    }
+}

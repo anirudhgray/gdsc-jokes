@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" class="flex flex-column">
+
+<head>
+    <title>GDSC Jokester</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" href="img/favicon.jpeg">
+</head>
+
+<body>
+    <div class="flex flex-column" id="app">
+        <header class="flex justify-between pad">
+            <h1>Khep<span class="green-text">Jox</span></h1>
+            <a class="nav-img" href="https://github.com/anirudhgray">
+                <img class="nav-img-main" src="img/maniacal.jpeg">
+                <img class="nav-img-hover" src="img/maniacal-blue.png">
+            </a>
+        </header>
+        <div class="pad flex flex-column main grow">
+            <nav>
+                <button @click="switchTab(true)" class="point-cursor" :class="{'button-selected':tabAny}">Any</button>
+                <button @click="switchTab(false)" class="point-cursor"
+                    :class="{'button-selected':!tabAny}">Programming</button>
+            </nav>
+            <div class="flex grow justify-evenly pad wrap gap align-center">
+                <div class="box pad">
+                    <p class="joke">{{setup}}</p>
+                    <p v-if="!currSetup" class="joke mt">{{delivery}}</p>
+                </div>
+                <div>
+                    <div class="main-img" :class="{'clicked':rotActive}" v-if="tennantImage">
+                        <img @click="switchToDelivery" class="point-cursor main-img-main" src="img/tennant1.png">
+                        <img @click="switchToDelivery" class="point-cursor main-img-click" src="img/tennant2.png">
+                    </div>
+                    <div class="main-img" :class="{'clicked':rotActive}" v-else>
+                        <img @click="switchToDelivery" :class="{'clicked':rotActive}" class="point-cursor main-img-main"
+                            src="img/capaldi1.png">
+                        <img @click="switchToDelivery" :class="{'clicked':rotActive}"
+                            class="point-cursor main-img-click" src="img/capaldi2.png">
+                    </div>
+                    <p @click="switchToDelivery" class="point-cursor text-center">Click Me!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://unpkg.com/vue@next"></script>
+<script src="./script.js"></script>
+
+</html>
